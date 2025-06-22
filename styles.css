@@ -80,3 +80,42 @@ h3 {
   text-align: center;
 }
 
+.page-break {
+  page-break-before: always;
+}
+
+/* Print styles (for A4 PDF export) */
+@media print {
+  body {
+      background-color: white !important;
+      color: #000;
+      margin: 0;
+  }
+
+  main {
+      max-width: 793px; /* A4 width (~21cm) */
+      margin: 0 auto;
+      padding: 2cm;
+      box-shadow: none;
+      border-radius: 0;
+  }
+
+  img, iframe {
+      max-width: 80%;
+      page-break-inside: avoid;
+      break-inside: avoid;
+  }
+
+  header {
+      page-break-before: avoid;
+  }
+
+  .section-divider {
+      border: none;
+      height: 20px;
+  }
+
+  .page-break {
+      page-break-before: always;
+  }
+}
